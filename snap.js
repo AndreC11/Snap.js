@@ -15,7 +15,7 @@
     var Snap = Snap || function(userOpts) {
         var settings = {
             element: null,
-            dragger: null,
+            dragger: false,
             disable: 'none',
             addBodyClasses: true,
             hyperextensible: true,
@@ -269,7 +269,7 @@
                     
                     
                     if(settings.dragger){
-                        var dragParent = utils.parentUntil(target, settings.dragger);
+                        var dragParent = utils.parentUntil(target, 'data-snap-handle');
                         
                         // Only use dragger if we're in a closed state
                         if( !dragParent && 
